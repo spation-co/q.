@@ -314,7 +314,7 @@
         arr.forEach((item) => {
           if (typeof item === "number") { sum += item; len++; }
         });
-        return len === 0 ? null : parseInt(sum / len);
+        return len === 0 ? 1 : parseInt(sum / len); //se il vettore è inizialmente vuoto assumiamo come processing time 1 minuto
       }
       $scope.getNext = () => {
         var count = 0;
