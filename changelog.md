@@ -5,3 +5,4 @@
 - v1.1.1
     - Button fix when the user mispell his own address but the geocoding get it right anyway
     - Cookie is now removed if the address is changed and the checkbox unchecked
+    - /main page removed for semplicity, now you are directly on /list page ready to check the waiting time

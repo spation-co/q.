@@ -21,7 +21,7 @@ mongoose.connect(
 );
 router.get('/', (req,res) => { 
     if (req.headers.cookie && req.headers.cookie.indexOf("qspationUserAddress") !== -1) {
-        res.render('it/it-main');
+        res.render('it/it-list');
     }  else {
         res.render('index');         
     }   

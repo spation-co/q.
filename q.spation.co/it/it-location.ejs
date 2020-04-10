@@ -175,7 +175,7 @@
                 $cookies.remove("qspationUserAddress");
                 sessionStorage.setItem('qspationUserAddress', $scope.userAddress);
               }
-              $window.location.href = '/main';
+              $window.location.href = '/list';
             } else {
               $scope.userAddress = features[0].place_name;
               $scope.shouldUserVerify = true;
