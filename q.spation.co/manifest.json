@@ -1,0 +1,20 @@
+{
+  "short_name": "Project Q",
+  "name": "Project Q",
+  "start_url": "https://q.spation.co",
+  "display": "standalone",
+  "manifest_version": 2,
+  "version": "1.0",
+  "icons": [
+    {
+      "src": "icon_192.png",
+      "sizes": "192x192",
+      "type": "png"
+    },
+    {
+      "src": "icon_128.png",
+      "sizes": "128x128",
+      "type": "png"
+    }
+  ]
+}
