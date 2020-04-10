@@ -1,6 +1,6 @@
 # Project Q
 
-Project Q is the first Spation open source product and, most importantly, our first digital product we ever released to the public. 
+Project Q is the first Spation open source product and, most importantly, the first digital product we ever released to the public. 
 
 Mainly born to give our little contribution during this though time, Q lets you check for the estimated queue waiting time outside supermarkets in order to both save you some time and help reduce the possibility of get infected by standing inline for too long.
 
