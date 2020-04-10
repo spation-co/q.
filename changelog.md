@@ -1,0 +1,7 @@
+- v1.1.0
+    - Algorithm corrected to work even if the the first entry is 0
+    - Minor styling improvements
+    - Angular is now local
+- v1.1.1
+    - Button fix when the user mispell his own address but the geocoding get it right anyway
+    - Cookie is now removed if the address is changed and the checkbox unchecked

@@ -56,8 +56,7 @@ router.get('/add', (req,res) => {
 router.get('/supermarkets', async (req,res) => {
     
     try {
-        const posts = await Post.find(); // THE SUPERMARKET LIST CANNOT BE FOUND AS THERE IS ERROR ON THIS LINE
-                                         // DUE TO CONNECTION PROBLEM WITH MONGO ATLAS
+        const posts = await Post.find(); 
         res.json(posts);
     } catch (err){
         res.json({message : err});
@@ -101,7 +100,7 @@ router.patch('/:postID', async (req,res) =>{
     try{
         const updatePost = await Post.updateOne(
             { _id : req.params.postID }, //becco il post da modificare
-            {$set: req.body.data} //specifico cosa modifico e con cosa, cioè il contenuto che mi arriva dal req nel body del json all'indice name
+            {$set: req.body.data} //specifico cosa modifico e con cosa
         );
         console.log(req.params.postID);
         res.json(updatePost);

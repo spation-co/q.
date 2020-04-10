@@ -165,14 +165,14 @@
             features.sort((a, b) => {
               a.relevance < b.relevance ? 1 : -1;
             });
-            if (features[0] && features[0].relevance > 0.8) {
+            if (features[0] && features[0].relevance > 0.8 || $scope.shouldUserVerify) {
                $scope.userAddress = features[0].place_name;
                var date = new Date();
               if ($scope.doesAgree) {
                 date.setMonth(date.getMonth() + 3);
                 $cookies.put("qspationUserAddress", $scope.userAddress, { expires: date.toUTCString() });
               } else {
-                date.setHours(date.getHours() + 1);
+                $cookies.remove("qspationUserAddress");
                 sessionStorage.setItem('qspationUserAddress', $scope.userAddress);
               }
               $window.location.href = '/main';
