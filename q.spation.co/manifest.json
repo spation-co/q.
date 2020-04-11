@@ -7,16 +7,6 @@
   "version": "1.1.2",
   "icons": [
     {
-      "src": "icon_72.png",
-      "sizes": "72x72",
-      "type": "png"
-    },
-    {
-      "src": "icon_96.png",
-      "sizes": "96x96",
-      "type": "png"
-    },
-    {
       "src": "icon_128.png",
       "sizes": "128x128",
       "type": "png"
@@ -27,7 +17,7 @@
       "type": "png"
     },
     {
-      "src": "icon_512.png",
+      "src": "webclip.png",
       "sizes": "512x512",
       "type": "png"
     }
