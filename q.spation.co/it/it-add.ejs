@@ -20,7 +20,7 @@
     }(window, document);
   </script>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <link href="../images/icon_512.png" rel="apple-touch-icon">
   <style rel="stylesheet">
     .waiting {
       width: 100%;
@@ -83,16 +83,16 @@
         <input type="text" ng-model="$parent.supermarket" class="text-field-3 w-input" name="Supermarket"
           ng-style="{'border': addForm.Supermarket.$dirty && addForm.Supermarket.$invalid? '1px solid #f00': ''}"
           placeholder="Nome del supermercato" required="">
-        <input type="text" ng-model="$parent.streetName" class="text-field-3 w-input" autofocus="true" maxlength="256"
+        <input type="text" ng-model="$parent.streetName" class="text-field-3 w-input" autofocus="false" maxlength="256"
           name="Address" ng-style="{'border': addForm.Address.$dirty && addForm.Address.$invalid? '1px solid #f00': ''}"
           placeholder="Via, Numero Civico" id="Address" required="">
-        <input type="text" ng-model="$parent.zipCode" class="text-field-3 w-input" autofocus="true" maxlength="256"
+        <input type="text" ng-model="$parent.zipCode" class="text-field-3 w-input" autofocus="false" maxlength="256"
           name="ZipCode" ng-style="{'border': addForm.ZipCode.$dirty && addForm.ZipCode.$invalid? '1px solid #f00': ''}"
           placeholder="CAP" id="Zip-Code" required="">
-        <input type="text" ng-model="$parent.city" class="text-field-3 w-input" autofocus="true" maxlength="256"
+        <input type="text" ng-model="$parent.city" class="text-field-3 w-input" autofocus="false" maxlength="256"
           name="City" ng-style="{'border': addForm.City.$dirty && addForm.City.$invalid? '1px solid #f00': ''}"
           placeholder="Città" id="City" required="">
-        <input type="text" ng-model="$parent.country" class="text-field-3 w-input" autofocus="true" maxlength="256"
+        <input type="text" ng-model="$parent.country" class="text-field-3 w-input" autofocus="false" maxlength="256"
           name="Country" ng-style="{'border': addForm.Country.$dirty && addForm.Country.$invalid? '1px solid #f00': ''}"
           placeholder="Stato" id="Country" required="">
 

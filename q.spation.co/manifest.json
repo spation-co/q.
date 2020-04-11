@@ -1,19 +1,37 @@
 {
-  "short_name": "Project Q",
+  "short_name": "Queue",
   "name": "Project Q",
   "start_url": "https://q.spation.co",
   "display": "standalone",
   "manifest_version": 2,
-  "version": "1.0",
+  "version": "1.1.2",
+  "background_color": "#efeff4",
+  "theme_color": "#efeff4",
+  "categories": ["utility"],
   "icons": [
+    {
+      "src": "icon_72.png",
+      "sizes": "72x72",
+      "type": "png"
+    },
+    {
+      "src": "icon_96.png",
+      "sizes": "96x96",
+      "type": "png"
+    },
+    {
+      "src": "icon_128.png",
+      "sizes": "128x128",
+      "type": "png"
+    },
     {
       "src": "icon_192.png",
       "sizes": "192x192",
       "type": "png"
     },
     {
-      "src": "icon_128.png",
-      "sizes": "128x128",
+      "src": "icon_512.png",
+      "sizes": "512x512",
       "type": "png"
     }
   ]

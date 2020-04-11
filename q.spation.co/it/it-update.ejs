@@ -19,7 +19,7 @@
     }(window, document);
   </script>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <link href="../images/icon_512.png" rel="apple-touch-icon">
 </head>
 
 <body class="body center" ng-app="updateApp" ng-controller="updateCtrl">
@@ -32,7 +32,7 @@
     <div class="form-block-2 w-form">
       <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form-2">
         <input type="text" ng-model="people" ng-change="updateNumber(people)" class="text-field-3 w-input"
-          autofocus="true" maxlength="256" placeholder="Quante persone hai davanti a te?" id="People" required=""><label
+          autofocus="false" maxlength="256" placeholder="Quante persone hai davanti a te?" id="People" required=""><label
           class="w-checkbox checkbox-field"><input type="checkbox" ng-model="isLastPerson"
             ng-change="changeIsLast(isLastPerson)" class="w-checkbox-input"><span
             class="checkbox-label w-form-label">Sono l&#x27;ultima persona in coda</span></label>

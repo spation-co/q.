@@ -8,3 +8,5 @@
     - /main page removed for semplicity, now you are directly on /list page, ready to check the waiting time
 - v1.1.2
     - Minor styling improvements
+    - Support for standalone webapp for every screensize
+    - Autofocus removed for every imput field

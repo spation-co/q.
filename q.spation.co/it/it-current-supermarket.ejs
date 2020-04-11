@@ -23,7 +23,7 @@
     }(window, document);
   </script>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <link href="../images/icon_512.png" rel="apple-touch-icon">
   <style rel="stylesheet">
     .waiting {
       width: 100%;
@@ -78,7 +78,7 @@
     <div class="form-block-2 w-form">
       <form>
 
-        <input type="text" class="text-field-3 w-input" autofocus="true" maxlength="256" name="Supermarket-address"
+        <input type="text" class="text-field-3 w-input" autofocus="false" maxlength="256" name="Supermarket-address"
           data-name="Supermarket address" ng-keyup="getHints('name')" ng-model="name"
           placeholder="Nome del supermercato" required="">
         <div ng-if="hints.length > 0 && isTyping === 'name'"
@@ -96,7 +96,7 @@
             </ul>
           </div>
         </div>
-        <input type="text" class="text-field-3 w-input" autofocus="true" maxlength="256" ng-keyup="getHints('address')"
+        <input type="text" class="text-field-3 w-input" autofocus="false" maxlength="256" ng-keyup="getHints('address')"
           ng-model="address" placeholder="Indirizzo del supermercato" required="">
         <div ng-if="hints.length > 0 &&  isTyping === 'address'"
           style="position: relative;width: 100%;margin-top: -30px;z-index: 1050;">
