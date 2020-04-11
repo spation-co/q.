@@ -35,9 +35,9 @@ router.get('/location', (req,res) => {
 router.get('/current', (req,res) => {
     res.render('it/it-current-supermarket');
 });
-router.get('/main', (req,res) => {
-    res.render('it/it-main');
-});
+// router.get('/main', (req,res) => {
+//     res.render('it/it-main');
+// });
 router.get('/list', (req,res) => {
     res.render('it/it-list');
 });
