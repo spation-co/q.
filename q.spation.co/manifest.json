@@ -1,13 +1,10 @@
 {
-  "short_name": "Queue",
-  "name": "Project Q",
+  "short_name": "Q",
+  "name": "Q",
   "start_url": "https://q.spation.co",
   "display": "standalone",
   "manifest_version": 2,
   "version": "1.1.2",
-  "background_color": "#efeff4",
-  "theme_color": "#efeff4",
-  "categories": ["utility"],
   "icons": [
     {
       "src": "icon_72.png",
