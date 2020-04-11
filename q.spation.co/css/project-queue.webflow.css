@@ -47,6 +47,7 @@ body.body.center {
   margin-right: 0px;
   margin-top: 4px;
   line-height: normal;
+  font-size: 14px;
 }
 
 .w-checkbox-input--inputType-custom {
@@ -1621,6 +1622,7 @@ figcaption {
 
 .addressRelevanceIsLow{
   margin-bottom: 30px;
+  color: #888;
 }
 
 .image {
@@ -4798,7 +4800,7 @@ html.w-mod-js *[data-ix="new-interaction"] {
     padding-right: 10px;
     padding-left: 10px;
     font-family: 'Natrix Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
     text-align: center;
   }

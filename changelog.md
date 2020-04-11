@@ -1,12 +1,18 @@
-- v1.1.0
-    - Algorithm corrected to work even if the the first entry is 0
-    - Minor styling improvements
-    - Angular is now local
-- v1.1.1
-    - Button fix when the user mispell his own address but the geocoding get it right anyway
-    - Cookie is now removed if the address is changed and the checkbox unchecked
-    - /main page removed for semplicity, now you are directly on /list page, ready to check the waiting time
-- v1.1.2
-    - Minor styling improvements
-    - Support for standalone webapp for every screensize
-    - Autofocus removed for every imput field
+# 1.1.2 (April 11, 2020)
+
+- Minor styling improvements.
+- Icons now support standalone mode for every screensize.
+- Autofocus removed for every input field.
+- Splash screen for iOS.
+
+# 1.1.1 (April 10, 2020)
+
+- Fix when the user misspells his own address but the geocoding get it right anyway.
+- UserAddress cookie is now removed if the address is changed and the checkbox unchecked.
+- /main page has been removed, the user is now redirected to the /list page which is now the new homepage.
+
+# 1.1 (April 10, 2020)
+
+- Algorithm corrections.
+- Minor styling improvements.
+- Angular.js is now local.
