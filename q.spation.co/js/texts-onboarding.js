@@ -3,9 +3,9 @@ angular.module('textsOnboarding', [])
 	"it": {
 		"h2": "Cerca.",
 		"paragraph5_1": "Inserisci il tuo indirizzo e visualizza i supermercati più vicini alla tua posizione.",
-		"h2_2": "Check.",
+		"h2_2": "Controlla.",
 		"paragraph5_2": "Verifica il tempo di attesa in coda prima di recarti presso il supermercato, così da risparmiare tempo e aiutare a ridurre al minimo l'aggregazione di persone.",
-		"h2_3": "Contribute.",
+		"h2_3": "Contribuisci.",
 		"paragraph5_3": "Fornisci informazioni utili agli altri utenti. Non trovi il supermercato che cercavi? Aggiungilo e dai il tuo contributo alla community.",
 		"button4wbutton": "Avanti"
 	},
