@@ -15,7 +15,7 @@ angular.module('textsAdd', [])
 			"en": {
 				"heading4": "Add the supermarket.",
 				"placeholder_0": "Name of the supermarket",
-				"placeholder_1": "Street number and name",
+				"placeholder_1": "Street number sand name",
 				"placeholder_2": "Zip Code",
 				"placeholder_3": "City",
 				"placeholder_4": "Country",
@@ -25,7 +25,29 @@ angular.module('textsAdd', [])
 				"button3wbutton": "Back to home"
 			},
 			"fr": {
-
+				"heading4": "Ajoute le supermarché.",
+				"placeholder_1": "Nom du Supermarchè",
+				"placeholder_2": "Numéro et nom de la rue",
+				"placeholder_2": "Code Postal",
+				"placeholder_3": "Ville",
+				"placeholder_4": "Pays",
+				"ngbindingngscope": "Valider",						
+				"paragraph13": "La community te remercie pour ta précieuse contribution!",
+				"paragraph13copy": "The supermarket has been successfully added, you can now update the relating queue waiting time information.",
+				"button3wbutton": "Retourner à l’accueil"
+			},
+			"es": {
+				"heading4": "Agrega el supermercado.",
+				"placeholder_1": "Nombre supermercado",
+				"placeholder_2": "Calle y número cívico",
+				"placeholder_2": "Código Postal",
+				"placeholder_3": "Ciudad",
+				"placeholder_4": "Estado",
+				"ngbindingngscope": "Confirmar",
+				"paragraph13": "¡La community te agradece por tu valiosa contribución!",
+				"paragraph13copy": "El supermercato se agregó con éxito, ahora puedes actualizar las informaciones sobre la demora de cola.",
+				"button3wbutton": "Volver al menú inicial"
 			}
+			
 		}
 );
