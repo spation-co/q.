@@ -17,10 +17,10 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch_1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch_1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link href="../css/project-queue.webflow.css" rel="stylesheet" type="text/css">
-  <script src="../js/angular.min.js" type="text/javascript"></script>
-  <script src="../js/angular-cookies.min.js"
-    type="text/javascript"></script>
+  <link href="/css/project-queue.webflow.css" rel="stylesheet" type="text/css">
+  <script src="/js/angular.min.js" type="text/javascript"></script>
+  <script src="/js/angular-cookies.min.js" type="text/javascript"></script>
+  <script src="/js/texts-list.js" type="text/javascript"></script>
   <script type="text/javascript">
     ! function (o, c) {
       var n = c.documentElement,
@@ -114,6 +114,10 @@
         margin-bottom: 40px;
       }
 
+      .main_div-copy {
+        margin-top: 45px !important;
+      }
+
     }
 
     @media only screen and (min-width: 768px) {
@@ -150,19 +154,19 @@
   <div class="main_div-copy">
     <div class="header_div" style="text-align: center;">
       <div class="div-block-22">
-        <h1 class="heading-2" ng-cloak>Tempi di attesa stimati.</h1>
+        <h1 class="heading-2" ng-cloak>{{texts.heading2}}</h1>
       </div>
       <div class="div-block-47" style="margin-bottom: 35px;">
         <div class="div-block-46">
-          <p class="paragraph-19" ng-cloak>Ecco i supermercati vicino a&nbsp;{{userAddress}}.</p>
+          <p class="paragraph-19" ng-cloak>{{texts.paragraph19ngbinding_1}}&nbsp;{{userAddress}}.</p>
         </div>
         <div>
-          <div class="div-block-45"><a href="/location" class="link-6">Cambia indirizzo</a></div>
+          <div class="div-block-45"><a href="/location" class="link-6" ng-cloak>{{texts.link6}}</a></div>
         </div>
       </div>
       <div class="div-block-43 slider" style="width: 100%;margin-bottom: 35px;margin-left: auto;margin-right: auto;">
         <div class="div-block-48 slider-label">
-          <div class="slider-text" style="margin-top: 20px;">Distanza dalla tua posizione:
+          <div class="slider-text" style="margin-top: 20px;" ng-cloak>{{texts.slidertext}}
             <div class="slider-value" style="font-weight: bold;margin-left:10px;margin-right: 20px;font-size:18px;"
               ng-cloak>
               {{maxDistance}}&nbsp;km
@@ -192,42 +196,39 @@
           <div class="div-block-36"
             ng-style='{"opacity": s.isClosed ? 0.4 : 1, "background-color": isClosed ? "#888": !s.isUptoDate ? "#0e1c34" :  s.pTime > 60 ? "#db2525" : s.pTime > 30 ? "#f0a61c" : "#327d83"}'>
             <div ng-if="!s.isClosed && s.isUptoDate" class="text-block-19" ng-cloak>{{s.pTime + " "}}min</div>
-            <div ng-if="s.isClosed && !s.isUptoDate" class="text-block-19">Chiuso</div>
-            <div ng-if="!s.isClosed && !s.isUptoDate" class="text-block-19">Non aggiornato</div>
+            <div ng-if="s.isClosed && !s.isUptoDate" class="text-block-19" ng-cloak>{{texts["text-block19ngscope_1"]}}</div>
+            <div ng-if="!s.isClosed && !s.isUptoDate" class="text-block-19" ng-cloak>{{texts["text-block19ngscope_2"]}}</div>
           </div>
           <div class="div-block-38" style="text-align: center;"><a
               ng-style="{'cursor': s.isClosed ? 'not-allowed' : 'pointer'}"
-              href="{{s.isClosed ? '#' : '/update/' + s._id}}" class="link-4" style="text-align: center;">Aggiorna
-              informazione</a></div>
+              href="{{s.isClosed ? '#' : '/update/' + s._id}}" class="link-4" style="text-align: center;" ng-cloak>{{texts.link4}}</a></div>
         </div>
         <div class="div-block-34">
           <p class="paragraph-16" ng-cloak>{{s.name}}</p>
           <p class="paragraph-17" ng-cloak>{{s.address}}</p>
           <p class="paragraph-18" ng-cloak>{{s.distance + " "}}km
-            <span ng-if="s.isUptoDate && s.updateTime && s.updateTime < 45">• Ultima
-              segnalazione:&nbsp;{{s.updateTime + " minuti fa"}}</span></p>
+            <span ng-if="s.isUptoDate && s.updateTime && s.updateTime < 45">• {{texts.paragraph18}}&nbsp;{{s.updateTime + " minuti fa"}}</span></p>
         </div>
       </div>
 
     </div>
   </div>
   <div ng-if="!maxDistanceReached" class="div-block-28">
-    <div class="div-block-30"><a href="#" ng-click="getNext()" class="link-3">Vedi altri supermercati</a></div>
+    <div class="div-block-30"><a href="#" ng-click="getNext()" class="link-3" ng-cloak>{{texts.link3}}</a></div>
   </div>
   <div ng-if="maxDistanceReached" class="div-block-28" style="margin-top: 30px;">
     <div class="div-block-30"><a href="#" style="color: #888;text-decoration: none;font-weight: normal;"
-        ng-click="getNext()" class="link-3">Nessun altro risultato è stato trovato sulla base della distanza da te
-        inserita</a></div>
+        ng-click="getNext()" class="link-3" ng-cloak>{{texts.paragraph19ngbinding_2}}</a></div>
   </div>
 
-  <div class="div-block-29"><a href="/add" class="button-3 w-button">Aggiungi un nuovo supermercato</a></div>
+  <div class="div-block-29"><a href="/add" class="button-3 w-button" ng-cloak>{{texts.button3wbutton}}</a></div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5e7b9ae24c46c726e716ecf3"
     type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
   <script type="text/javascript">
-    var app = angular.module('listApp', ['ngCookies']);
+    var app = angular.module('listApp', ['ngCookies', 'textsList']);
     app.directive('slider', function () {
       return {
         restrict: 'EA',
@@ -289,7 +290,35 @@
         }
       }
     });
-    app.controller("listCtrl", function ($scope, $http, $cookies, $window) {
+    app.controller("listCtrl", function ($scope, $http, $cookies, $window, lang) {
+
+      var language = $window.navigator.userLanguage || $window.navigator.language;
+      console.log(language);
+      switch (language) {
+        case "it-IT" || "it" :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case "en-US" || "en-UK" || "en" :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case "fr-FR" || "fr" :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case "es-ES" || "es":
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        default:
+          language = "en";
+          //console.log("language: deafault");
+      }
+      $scope.texts = lang[language];
+      if (!$scope.texts) {
+      $scope.texts = lang.en;
+      } 
 
       var location = $cookies.get("qspationUserAddress");
       if (location) {

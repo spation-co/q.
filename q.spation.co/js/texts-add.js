@@ -22,7 +22,7 @@ angular.module('textsAdd', [])
 				"ngbindingngscope": "Confirm",
 				"paragraph13": "The community thanks you for your precious contribution!",
 				"paragraph13copy": "The supermarket has been successfully added, you can now update the relating queue waiting time information.",
-				"button3wbutton": "Torna alla home"
+				"button3wbutton": "Back to home"
 			},
 			"fr": {
 

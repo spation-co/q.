@@ -17,6 +17,8 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch_1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link href="../css/project-queue.webflow.css" rel="stylesheet" type="text/css">
+  <script src="/js/angular.min.js" type="text/javascript"></script>
+  <script src="/js/texts-thanks.js" type="text/javascript"></script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">
     ! function (o, c) {
@@ -29,24 +31,23 @@
   <link href="../images/webclip.png" rel="apple-touch-icon">
 </head>
 
-<body class="body center">
+<body class="body center" ng-app ="thanksApp" ng-controller="thanksCtrl">
   <div class="main_div" style="margin: 0;padding-bottom: 0;">
     <div class="header_div" style="margin-top: 0;">
       <div class="div-block-22">
-        <h1 class="heading-5">Grazie!</h1>
+        <h1 class="heading-5" ng-cloak>{{texts.heading5}}</h1>
       </div>
       <div class="div-block-25-copy">
-        <p class="paragraph-13">Sono proprio le persone come te che rendono questo mondo un posto migliore, soprattutto
-          in momenti di difficoltà come questo. Grazie davvero.</p>
+        <p class="paragraph-13" ng-cloak>{{texts.paragraph13}}</p>
       </div>
     </div>
     <div class="div-block-17">
-      <div class="text-block-14">#AndràTuttoBene</div>
+      <div class="text-block-14" ng-cloak>{{texts.textblock14}}</div>
     </div>
     <div class="form-block-2 w-form">
       <form>
         <a href="/list" class="submit-button w-button"
-          style="margin-bottom: 0;margin-left:auto;margin-right:auto;">Torna alla home</a>
+          style="margin-bottom: 0;margin-left:auto;margin-right:auto;" ng-cloak>{{texts.submitbuttonwbutton}}</a>
       </form>
     </div>
   </div>
@@ -55,6 +56,38 @@
     crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script type="text/javascript">
+    var app = angular.module('thanksApp', ["textsThanks"]);
+    app.controller('thanksCtrl', function ($scope, $window, lang) {
+      var language = $window.navigator.userLanguage || $window.navigator.language;
+      console.log(language);
+      switch (language) {
+        case ("it-IT" || "it") :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case ("en-US" || "en-UK" || "en") :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case ("fr-FR" || "fr") :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case ("es-ES" || "es"):
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        default:
+          language = "en";
+          //console.log("language: deafault");
+      }
+      $scope.texts = lang[language];
+      if (!$scope.texts) {
+      $scope.texts = lang.en;
+      }
+    });
+  </script>
 </body>
 
 </html>

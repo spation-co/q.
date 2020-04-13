@@ -16,7 +16,9 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch_1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch_1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link href="../css/project-queue.webflow.css" rel="stylesheet" type="text/css">
+  <link href="/css/project-queue.webflow.css" rel="stylesheet" type="text/css">
+  <script src="/js/angular.min.js" type="text/javascript"></script>
+  <script src="/js/texts-onboarding.js" type="text/javascript"></script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">
     ! function (o, c) {
@@ -25,40 +27,38 @@
       n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
     }(window, document);
   </script>
-  <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/images/webclip.png" rel="apple-touch-icon">
 </head>
 
-<body class="body" style="padding-bottom: 30px;">
+<body class="body" style="padding-bottom: 30px;" ng-app ="obApp" ng-controller="obCtrl">
   <div class="main_div">
     <div class="div-block-10">
       <div class="div-block-13">
-        <p class="h2">Cerca.</p>
+        <p class="h2" ng-cloack>{{texts.h2}}</p>
       </div>
       <div>
-        <p class="paragraph-5">Inserisci il tuo indirizzo e visualizza i supermercati più vicini alla tua posizione.</p>
+        <p class="paragraph-5" ng-cloack>{{texts.paragraph5_1}}</p>
       </div>
     </div>
     <div class="div-block-16">
       <div class="div-block-14">
-        <p class="h2">Controlla.</p>
+        <p class="h2" ng-cloack>{{texts.h2_2}}</p>
       </div>
       <div>
-        <p class="paragraph-5">Controlla il tempo di attesa in coda prima di recarti presso il supermercato, non
-          affollare file già lunghe e risparmia tempo.
+        <p class="paragraph-5" ng-cloack>{{texts.paragraph5_2}}
         </p>
       </div>
     </div>
     <div class="div-block-11">
       <div class="div-block-15">
-        <p class="h2">Contribuisci.</p>
+        <p class="h2" ng-cloack>{{texts.h2_3}}</p>
       </div>
       <div>
-        <p class="paragraph-6">Fornisci informazioni utili agli altri utenti. Non trovi il supermercato che cercavi?
-          Aggiungilo e dai il tuo contributo alla community.</p>
+        <p class="paragraph-6" ng-cloack>{{texts.paragraph5_3}}</p>
       </div>
     </div>
-    <div class="div-block-9"><a href="/location" class="button-4 w-button">Avanti</a></div>
+    <div class="div-block-9"><a href="/location" class="button-4 w-button" ng-cloack>{{texts.button4wbutton}}</a></div>
   </div>
   <div class="footer_section">
     <div class="div-block-7"><a href="https://www.spation.co" target="_blank" class="w-inline-block"><img
@@ -73,6 +73,38 @@
     crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script type="text/javascript">
+    var app = angular.module('obApp', ["textsOnboarding"]);
+    app.controller('obCtrl', function ($scope, $window, lang) {
+      var language = $window.navigator.userLanguage || $window.navigator.language;
+      console.log(language);
+      switch (language) {
+        case "it-IT" || "it" :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case "en-US" || "en-UK" || "en" :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case "fr-FR" || "fr" :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case "es-ES" || "es":
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        default:
+          language = "en";
+          //console.log("language: deafault");
+      }
+      $scope.texts = lang[language];
+      if (!$scope.texts) {
+      $scope.texts = lang["en-US"];
+      } 
+    });
+  </script>
 </body>
 
 </html>

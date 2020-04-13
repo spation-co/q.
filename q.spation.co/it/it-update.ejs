@@ -18,6 +18,7 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link href="../css/project-queue.webflow.css" rel="stylesheet" type="text/css">
   <script src="../js/angular.min.js" type="text/javascript"></script>
+  <script src="/js/texts-update.js" type="text/javascript"></script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">
     ! function (o, c) {
@@ -34,20 +35,20 @@
   <div ng-if="isEntering" class="main_div" style="margin: 0;">
     <div class="header_div" style="margin-top: 0;">
       <div class="div-block-22">
-        <h1 class="heading-2-copy">Aggiorna le informazioni.</h1>
+        <h1 class="heading-2-copy" ng-cloak>{{texts.heading2copy}}</h1>
       </div>
     </div>
     <div class="form-block-2 w-form">
       <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form-2">
         <input type="text" ng-model="people" ng-change="updateNumber(people)" class="text-field-3 w-input"
-          autofocus="false" maxlength="256" placeholder="Quante persone hai davanti a te?" id="People" required=""><label
+          autofocus="false" maxlength="256" placeholder="{{texts.placeholder}}" id="People" required=""><label
           class="w-checkbox checkbox-field"><input type="checkbox" ng-model="isLastPerson"
             ng-change="changeIsLast(isLastPerson)" class="w-checkbox-input"><span
-            class="checkbox-label w-form-label">Sono l&#x27;ultima persona in coda</span></label>
-        <button ng-click="submitNumberOfPeople()" class="submit-button w-button">Conferma</button></form>
+            class="checkbox-label w-form-label" ng-cloak>{{texts.checkboxlabelwformlabel}}</span></label>
+        <button ng-click="submitNumberOfPeople()" class="submit-button w-button" ng-cloak>{{texts.submitbuttonwbutton}}</button></form>
     </div>
     <div class="div-block-25" style="margin-bottom: 0;">
-      <p class="paragraph-13">La community ti ringrazia per il tuo prezioso contributo!</p>
+      <p class="paragraph-13" ng-cloak>{{texts.paragraph13}}</p>
     </div>
   </div>
 
@@ -55,14 +56,13 @@
   <div ng-if="!isEntering" class="main_div" style="margin: 0;">
     <div class="header_div" style="margin-top: 0;">
       <div class="div-block-22">
-        <h1 class="heading-2-copy-copy">Un&#x27;ultima cosa</h1>
+        <h1 class="heading-2-copy-copy" ng-cloak>{{texts.heading2copycopy}}</h1>
       </div>
       <div class="div-block-25">
-        <p class="paragraph-13">Non appena concludi la coda e stai per entrare nel supermercato clicca il tasto qui in
-          basso in modo da rendere i dati da te inseriti ancora più accurati per la community.</p>
+        <p class="paragraph-13" ng-cloak>{{texts.paragraph13_2}}</p>
       </div>
     </div>
-    <div><a ng-click="submitProcessingTime()" class="button-5 w-button">Sto entrando</a></div>
+    <div><a ng-click="submitProcessingTime()" class="button-5 w-button" ng-cloak>{{texts.button5wbutton}}</a></div>
   </div>
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5e7b9ae24c46c726e716ecf3"
@@ -71,11 +71,38 @@
   <script src="../js/webflow.js" type="text/javascript"></script>
   <script type="text/javascript">
 
-    var app = angular.module("updateApp", []);
-    app.controller("updateCtrl", async ($scope, $http, $window) => {
+    var app = angular.module("updateApp", ['textsUpdate']);
+    app.controller("updateCtrl", async ($scope, $http, $window, lang) => {
+      
+      var language = $window.navigator.userLanguage || $window.navigator.language;
+      console.log(language);
+      switch (language) {
+        case ("it-IT" || "it") :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case ("en-US" || "en-UK" || "en") :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case ("fr-FR" || "fr") :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case ("es-ES" || "es"):
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        default:
+          language = "en";
+          //console.log("language: deafault");
+      }
+      $scope.texts = lang[language];
+      if (!$scope.texts) {
+      $scope.texts = lang.en;
+      }
+      
       $scope.id = $window.location.pathname.replace("/update/", "");
-
-
       $scope.people = "";
 
       $scope.isLastPerson = false;
