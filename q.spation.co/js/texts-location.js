@@ -20,8 +20,8 @@ angular.module('textsLocation', [])
 		"placeholder_4": "Country",
 		"paragraph_4": "We do not want to get access to your GPS live position because we believe in the fundamental value of privacy. Although, if you do not want to insert your address at every access, by clicking the checkbox below, we are going to save your informations anonymously on your device through a simple cookie.",
 		"checkboxlabelwformlabelcblabel": "Save my address anonymously on my device",
-		"addressRelevanceIsLow" : " è l'indirizzo che cercavi?",
-		"notCorrect" : "Se non è corretto, reinserisci i dati.",
+		"addressRelevanceIsLow" : " is the address you were looking for?",
+		"notCorrect" : "If it is not correct, insert the data again",
 		"ngscope": "Confirm"
 	},
 	"fr": {
@@ -32,8 +32,8 @@ angular.module('textsLocation', [])
 		"placeholder_4": "Pays",
 		"paragraph_4": "Nous ne voulons pas avoir accès à ta position GPS car nous croyons au bien-fondé de la vie privée. Cependant, si tu ne souhaites pas devoir réécrire ton adresse à chaque utilisation, nous enregistrerons, avec un simple cookie, tes préférences de façon anonyme.",
 		"checkboxlabelwformlabelcblabel": "Enregistrer mon adresse de façon anonyme",
-		"addressRelevanceIsLow" : " è l'indirizzo che cercavi?",
-		"notCorrect" : "Se non è corretto, reinserisci i dati.",
+		"addressRelevanceIsLow" : " est l'adresse que vous cherchiez?",
+		"notCorrect" : "S'il n'est pas correct, entrez à nouveau les données.",
 		"ngscope": "Valider"
 	},
 	"es": {
@@ -44,8 +44,8 @@ angular.module('textsLocation', [])
 		"placeholder_4": "Estado",
 		"paragraph_4": "No queremos tener acceso a tu ubicación GPS porque creemos en el fundamental valor de la privacidad. Pero si quisieras no tener que ingresar tu dirección cada vez, guardaremos tus preferencias en forma anónima a través una simple cookie.",
 		"checkboxlabelwformlabelcblabel": "Guardar mi dirección en forma anónima en mi dispositivo.",
-		"addressRelevanceIsLow" : " è l'indirizzo che cercavi?",
-		"notCorrect" : "Se non è corretto, reinserisci i dati.",
+		"addressRelevanceIsLow" : " es la dirección que estabas buscando?",
+		"notCorrect" : "Si no es correcto, ingrese los datos nuevamente.",
 		"ngscope": "Confirmar"
 	}
 });

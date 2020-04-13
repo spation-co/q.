@@ -1,7 +1,7 @@
 # 1.2 (Unofficial)
 
 - Multilanguage support (IT,EN,FR,ES).
-- 
+- Tweet about your updates.
 
 # 1.1.2 (April 11, 2020)
 
