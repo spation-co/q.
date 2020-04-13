@@ -62,19 +62,35 @@
       var language = $window.navigator.userLanguage || $window.navigator.language;
       console.log(language);
       switch (language) {
-        case ("it-IT" || "it") :
+        case ("it") :
           language = "it";
           //console.log("language: italian");
           break;
-        case ("en-US" || "en-UK" || "en") :
+        case ("it-IT") :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case ("en") :
           language = "en";
           //console.log("language: english");
           break;
-        case ("fr-FR" || "fr") :
+        case ("en-UK") :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case ("fr") :
           language = "fr";
           //console.log("language: french");
           break;
-        case ("es-ES" || "es"):
+        case ("fr-FR") :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case ("es"):
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        case ("es-ES"):
           language = "es";
           //console.log("language: spanish");
           break;

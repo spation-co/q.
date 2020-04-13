@@ -27,7 +27,6 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link href="css/project-queue.webflow.css" rel="stylesheet" type="text/css">
   <script src="/js/angular.min.js" type="text/javascript"></script>
-  <!-- <script src="/js/angular.min.js.map" type="text/javascript"></script> -->
   <script src="/js/texts-index.js" type="text/javascript"></script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">
@@ -97,19 +96,35 @@
       var language = $window.navigator.userLanguage || $window.navigator.language;
       console.log(language);
       switch (language) {
-        case ("it-IT" || "it") :
+        case ("it") :
           language = "it";
           //console.log("language: italian");
           break;
-        case ("en-US" || "en-UK" || "en") :
+        case ("it-IT") :
+          language = "it";
+          //console.log("language: italian");
+          break;
+        case ("en") :
           language = "en";
           //console.log("language: english");
           break;
-        case ("fr-FR" || "fr") :
+        case ("en-UK") :
+          language = "en";
+          //console.log("language: english");
+          break;
+        case ("fr") :
           language = "fr";
           //console.log("language: french");
           break;
-        case ("es-ES" || "es"):
+        case ("fr-FR") :
+          language = "fr";
+          //console.log("language: french");
+          break;
+        case ("es"):
+          language = "es";
+          //console.log("language: spanish");
+          break;
+        case ("es-ES"):
           language = "es";
           //console.log("language: spanish");
           break;
