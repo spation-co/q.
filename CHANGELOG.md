@@ -7,7 +7,7 @@
 - Minor styling improvements.
 - Icons now support standalone mode for every screensize.
 - Autofocus removed for every input field.
-- Splash screens
+- Add splash screens.
 
 # 1.1.1 (April 10, 2020)
 
