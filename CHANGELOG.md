@@ -1,13 +1,13 @@
-# 1.2 (Unofficial)
+# 1.2 (April 12, 2020)
 
-- Multilanguage support (IT,EN,FR,ES).
+- Multi-language support (it, en, fr, es).
 
 # 1.1.2 (April 11, 2020)
 
 - Minor styling improvements.
 - Icons now support standalone mode for every screensize.
 - Autofocus removed for every input field.
-- Splash screen for iOS.
+- Splash screens
 
 # 1.1.1 (April 10, 2020)
 
