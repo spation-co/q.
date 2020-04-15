@@ -1,4 +1,8 @@
-# 1.2 (Unofficial)
+# 1.2.1
+
+- Simple Analytics introduction.
+
+# 1.2
 
 - Multilanguage support (IT,EN,FR,ES).
 

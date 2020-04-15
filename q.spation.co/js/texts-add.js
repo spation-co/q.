@@ -25,9 +25,9 @@ angular.module('textsAdd', [])
 				"button3wbutton": "Back to home"
 			},
 			"fr": {
-				"heading4": "Ajoute le supermarché.",
-				"placeholder_1": "Nom du Supermarchè",
-				"placeholder_2": "Numéro et nom de la rue",
+				"heading4": "Ajoute le supermarchè.",
+				"placeholder_0": "Nom du Supermarchè",
+				"placeholder_1": "Numéro et nom de la rue",
 				"placeholder_2": "Code Postal",
 				"placeholder_3": "Ville",
 				"placeholder_4": "Pays",
