@@ -1,17 +1,20 @@
+<<<<<<< HEAD:CHANGELOG.md
 # 1.2.1
 
 - Simple Analytics introduction.
 
-# 1.2
+=======
+# 1.2 (April 12, 2020)
+>>>>>>> 1ffd6577b5070277182f206fa16cd2c97b12866f:CHANGELOG.md
 
-- Multilanguage support (IT,EN,FR,ES).
+- Multi-language support (it, en, fr, es).
 
 # 1.1.2 (April 11, 2020)
 
 - Minor styling improvements.
 - Icons now support standalone mode for every screensize.
 - Autofocus removed for every input field.
-- Splash screen for iOS.
+- Add splash screens.
 
 # 1.1.1 (April 10, 2020)
 
