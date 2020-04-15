@@ -1,11 +1,8 @@
-<<<<<<< HEAD:CHANGELOG.md
 # 1.2.1
 
 - Simple Analytics introduction.
 
-=======
 # 1.2 (April 12, 2020)
->>>>>>> 1ffd6577b5070277182f206fa16cd2c97b12866f:CHANGELOG.md
 
 - Multi-language support (it, en, fr, es).
 
