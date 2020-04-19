@@ -19,7 +19,7 @@ angular.module('textsIndex', [])
 	"fr": {
 		"h2": "Bienvenue.", 
 		"paragraph15_1": "Q te permet de connaître, en temps réel, le temps d’attente dans les supermarchés les plus proches de chez toi afin de rendre plus simple le moment des courses pendant cette période difficile que nous vivons.",
-		"paragraph15_2": "Il est important de comprendre que la contribution de chacun est fondamentale pour que ce service soit utile et efficace. Nous t’invitons donc à contribuer le plus possible, pour le bien de toute la communauté. Stay safe out there!",
+		"paragraph15_2": "Il est important de comprendre que la contribution de chacun est fondamentale pour que ce service soit utile et efficace. Nous t’invitons donc à contribuer le plus possible, pour le bien de toute la community. Stay safe out there!",
 		"paragraph14": "Ce projet est totalement gratuit et open source. Si tu souhaites rejoindre notre cause, n’hésite pas à nous contacter à l’adresse",
 		"hashtag": "#ToutIraBien",	
 		"button4wbutton": "Commencer"

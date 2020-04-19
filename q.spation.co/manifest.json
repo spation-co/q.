@@ -1,10 +1,10 @@
 {
-  "short_name": "Q",
-  "name": "Q",
+  "short_name": "Q.",
+  "name": "Q.",
   "start_url": "https://q.spation.co",
   "display": "standalone",
   "manifest_version": 2,
-  "version": "1.1.2",
+  "version": "1.2",
   "icons": [
     {
       "src": "icon_128.png",

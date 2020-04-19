@@ -24,7 +24,7 @@ angular.module('textsOnboarding', [])
 		"h2_2": "Vérifie.",
 		"paragraph5_2": "Vérifie les temps d’attente avant de te rendre au supermarché, ne surcharge pas les files d’attente déjà trop longues et gagne du temps.",
 		"h2_3": "Contribue.",
-		"paragraph5_3": "Partage des informations utiles aux autres utilisateurs. Tu ne trouves pas le bon supermarché ? Ajoute-le et aide le reste de la communauté.",
+		"paragraph5_3": "Partage des informations utiles aux autres utilisateurs. Tu ne trouves pas le bon supermarché ? Ajoute-le et aide le reste de la community.",
 		"button4wbutton": "Démarrer"
 	},
 	"es": {

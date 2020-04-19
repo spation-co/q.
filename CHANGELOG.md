@@ -1,3 +1,8 @@
+# 1.2.2
+
+- Terms of Service and Cookie Policy has been detailed.
+- Algorithm patch.
+
 # 1.2.1
 
 - Simple Analytics introduction.

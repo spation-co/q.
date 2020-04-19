@@ -10,7 +10,11 @@ angular.module('textsLocation', [])
 		"checkboxlabelwformlabelcblabel": "Salva il mio indirizzo in forma anonima sul mio dispoisitivo",
 		"addressRelevanceIsLow" : " è l'indirizzo che cercavi?",
 		"notCorrect" : "Se non è corretto, reinserisci i dati.",
-		"ngscope": "Conferma"
+		"ngscope": "Conferma",
+		"texttosandpcp" :"Cliccando su Conferma accetti espressamente i ",
+		"tos" : "Termini e Condizioni",
+		"and" :" così come la ",
+		"pcp":"Privacy e Cookie Policy"
 	},
 	"en": {
 		"heading_3": "Please enter your address.",

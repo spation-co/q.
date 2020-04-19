@@ -25,9 +25,9 @@ angular.module('textsUpdate', [])
         "placeholder": "Combien de personnes attendent devant toi?",
         "checkboxlabelwformlabel": "Je suis dernier de la file d’attente",
         "submitbuttonwbutton": "Valider",
-        "paragraph13": "La communauté te remercie pour ta précieuse contribution!",
+        "paragraph13": "La community te remercie pour ta précieuse contribution!",
         "heading2copycopy": "Une dernière chose.",
-	    "paragraph13_2": "Clique sur le bouton ci dessous dès que tu entres dans le supermarché afin de partager des informations encore plus précises avec le reste de la communauté.",
+	    "paragraph13_2": "Clique sur le bouton ci dessous dès que tu entres dans le supermarché afin de partager des informations encore plus précises avec le reste de la community.",
 	    "button5wbutton": "Je rentre"
     },
     "es": {

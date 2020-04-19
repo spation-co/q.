@@ -31,6 +31,15 @@
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="../images/webclip.png" rel="apple-touch-icon">
   <style rel="stylesheet">
+    
+    .tosandpcp {
+      font-weight: 400;
+      font-size: small;
+      color: #888;
+      margin-bottom: 15px;
+      line-height: normal;
+    }
+
     .waiting {
       width: 100%;
       position: absolute;
@@ -97,7 +106,7 @@
     </div>
     <div class="div-block-21">
       <div class="form-block-2 w-form">
-        <form data-redirect="https://q.spation.co/it/main" redirect="https://q.spation.co/it/main" data-name=""
+        <form data-redirect="https://q.spation.co/it/list" redirect="https://q.spation.co/it/list" data-name=""
           method="get" class="form-2">
           <input type="text" ng-model="streetName" class="text-field-3 w-input" autofocus="false" maxlength="256"
             name="User-address" data-name="User address" placeholder="{{texts.placeholder_1}}" id="User-address-4"
@@ -126,6 +135,7 @@
             </div>
             <span ng-if="!loading" i18n='Confirm' ng-cloak>{{texts.ngscope}}</span>
           </button>
+          <p class="tosandpcp" ng-cloack>{{texts.texttosandpcp}}<a style="color: #888;" href="/tos.pdf" ng-cloack>{{texts.tos}}</a>{{texts.and}}<a href="/pcp.pdf" style="color: #888;" ng-cloack>{{texts.pcp}}.</a></p>
         </form>
         
       </div>

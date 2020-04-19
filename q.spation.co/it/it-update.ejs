@@ -147,11 +147,14 @@
         var endTime = Date.now();
         var diff = endTime - $scope.startTime;
         var pTime =  diff/ (($scope.people +1) * 60000); //divide for 60000 to get minutes from milliseconds
-        if (pTime <= 1){
+        if (diff <= 60000){
           $window.location.href = '/thanks';
           return;
         } //verify that processing time for each person is greater or equal to 1 minute, to avoid erroneus datas in db
         var points = $scope.userData.processingTime;
+        if (!points){
+          points = [];
+        }
         if (points.length < 10) { // if the datas are less than 10, just add the calculated value.No need to validate
           points.push(pTime);// if the existing data is updated as in this case
           $http.put('/' + $scope.id, { processingTime: points });
