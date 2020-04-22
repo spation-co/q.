@@ -30,56 +30,6 @@
   </script>
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="../images/webclip.png" rel="apple-touch-icon">
-  <style rel="stylesheet">
-    .waiting {
-      width: 100%;
-      position: absolute;
-      height: 100%;
-      top: 0px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      left: 0px;
-    }
-
-    .waiting>span {
-      width: 7px;
-      height: 7px;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      background-color: #fff;
-      margin: 0 5px;
-
-      border-radius: 50%;
-      display: inline-block;
-      animation-name: dots;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-    }
-
-    .waiting span:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    .waiting span:nth-child(3) {
-      animation-delay: 0.8s;
-    }
-
-    @keyframes dots {
-      50% {
-        opacity: 0;
-        transform: scale(0.7) translateY(10px);
-      }
-    }
-
-    @media only screen and (min-width: 768px) {
-      .btn {
-        margin-top: 30px;
-      }
-    }
-  </style>
 </head>
 
 <body class="body" ng-app="addApp" ng-controller="addCtrl">
@@ -120,9 +70,11 @@
             </ul>
           </div>
         </div>
-        <a href="#" ng-if="buttonText === 'Avanti'" ng-click="clear()" style="margin-bottom: 30px;" class="link-3">Non è
-          il risultato che cercavo</a>
-        <button ng-disabled="addForm.$invalid" ng-click="submitAddress()" class="submit-button w-button btn"
+        <div class="addressRelevanceIsLow" ng-if="hasUserVerified" ng-cloak>
+          "{{userAddress}}"{{texts.addressRelevanceIsLow}} 
+          <a href="#" ng-click="clear()" ng-cloak>{{texts.notCorrect}}</a>
+        </div>
+        <button ng-disabled="addForm.$invalid" ng-click="verifyAddress()" class="submit-button w-button btn"
           style="position: relative;margin-left: auto;margin-right: auto;margin-bottom: 40px;"
           ng-style="{height: loading ? '42px' : 'auto'}">
           <div ng-if="$parent.loading" class="waiting">
@@ -149,138 +101,8 @@
     type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    var geocodingClient = mapboxSdk({ accessToken: 'pk.eyJ1IjoicXNwYXRpb24iLCJhIjoiY2s4MW85cm50MGJjdjNmbDkxZmtwY2ExbyJ9.qi-2tdukdDJhH7kZWttiRA' });
-
-
-    var app = angular.module('addApp', ['textsAdd']);
-    app.controller("addCtrl", function ($scope, $http, $window, lang) {
-
-      var language = $window.navigator.userLanguage || $window.navigator.language;
-      console.log(language);
-      switch (language) {
-        case ("it") :
-          language = "it";
-          //console.log("language: italian");
-          break;
-        case ("it-IT") :
-          language = "it";
-          //console.log("language: italian");
-          break;
-        case ("en") :
-          language = "en";
-          //console.log("language: english");
-          break;
-        case ("en-UK") :
-          language = "en";
-          //console.log("language: english");
-          break;
-        case ("fr") :
-          language = "fr";
-          //console.log("language: french");
-          break;
-        case ("fr-FR") :
-          language = "fr";
-          //console.log("language: french");
-          break;
-        case ("es"):
-          language = "es";
-          //console.log("language: spanish");
-          break;
-        case ("es-ES"):
-          language = "es";
-          //console.log("language: spanish");
-          break;
-        default:
-          language = "en";
-          //console.log("language: deafault");
-      }
-      $scope.texts = lang[language];
-      if (!$scope.texts) {
-      $scope.texts = lang.en;
-      }
-
-      $scope.userAddress = "";
-
-      $scope.streetName = "";
-      $scope.zipCode = "";
-      $scope.country = "";
-      $scope.city = "";
-
-      $scope.hints = [];
-      $scope.buttonText = $scope.texts.ngbindingngscope;
-      $scope.path = (address) => {
-        return `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(address)}.json?types=address&access_token=pk.eyJ1IjoicXNwYXRpb24iLCJhIjoiY2s4MW85cm50MGJjdjNmbDkxZmtwY2ExbyJ9.qi-2tdukdDJhH7kZWttiRA`;
-      };
-      $scope.loading = false;
-      $scope.clear = () => {
-        $scope.buttonText = $scope.texts.ngbindingngscope;
-        $scope.userAddress = '';
-      };
-      // function autocomplete(text, callback) {
-      //       geocodingClient.geocoding.forwardGeocode({
-      //           query: text,
-      //           countries: ['It'],
-      //           autocomplete: true,
-      //           limit: 5,
-      //       })
-      //           .send()
-      //           .then(response => {
-      //               const match = response.body;
-      //               callback(match);
-      //           });
-      //   }
-      $scope.updateAddress = (hint) => {
-        $scope.userAddress = hint.place_name;
-        $scope.supermarket = hint.text;
-        $scope.hints = [];
-      };
-      $scope.submitAddress = async () => {
-        $scope.userAddress = `${$scope.streetName}, ${$scope.zipCode}, ${$scope.city}, ${$scope.country}`;
-
-        var res = await $http.get($scope.path($scope.userAddress));
-        var features = res.data.features;
-        $scope.loading = false;
-        features.sort((a, b) => {
-          a.relevance < b.relevance ? 1 : -1;
-        });
-        $scope.loading = true;
-        $http.post('/', {
-          data: {
-            name: $scope.supermarket, address: $scope.userAddress,
-            coordinates: features[0].center
-          }
-        }).then((res) => {
-          $scope.isDataSent = true;
-          $scope.loading = true;
-          //$window.location.href = '/list';
-        });
-
-
-      };
-      // $scope.getHints = function(e) {
-      //   autocomplete($scope.userAddress, function (results) {
-      //       $scope.hints = results.features;
-      //   });
-      // };
-      // $scope.getAddress = async () => {
-      //   if ($scope.buttonText === 'Avanti') {
-
-      //   }
-      //   $scope.loading = true;
-      //   var res = await $http.get($scope.path($scope.userAddress));
-      //   $scope.$apply(() => {$scope.buttonText = "Avanti";
-      //   var features = res.data.features;
-      //     $scope.loading = false;
-      //     features.sort((a, b) => {
-      //       a.relevance < b.relevance ? 1 : -1;
-      //     });
-      //     $scope.userAddress = features[0].place_name;
-      //   });
-      // };
-
-    });
-  </script>
+  <script type="text/javascript" src ="/js/services.js"></script>
+  <script type="text/javascript" src ="/js/add.js"></script>
   <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script> 
   <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript> <!-- simple analytics -->
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

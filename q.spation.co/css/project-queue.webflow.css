@@ -155,10 +155,6 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
-  color: #32343a;
-}
-
 a:active {
   color: #43464d;
 }
@@ -1462,6 +1458,70 @@ figcaption {
   opacity: 0.7;
 }
 
+.tosandpcp {
+  font-weight: 400;
+  font-size: small;
+  color: #888;
+  margin-bottom: 15px;
+  line-height: normal;
+}
+
+.waiting {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+}
+
+.waiting>span {
+  width: 7px;
+  height: 7px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #fff;
+  margin: 0 5px;
+
+  border-radius: 50%;
+  display: inline-block;
+  animation-name: dots;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.waiting span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.slider-label {
+  width: 100%;
+}
+
+.slider-bar {
+  width: 100%;
+  transform: translateX(-12.5px);
+}
+
+.slider-value {
+  margin-top: 5px;
+}
+
+.waiting span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes dots {
+  50% {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+  }
+}
+
 .body {
   background-color: #efeff4;
   font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, sans-serif;
@@ -2002,7 +2062,7 @@ figcaption {
 
 .header_div {
   display: block;
-  margin-top: 140px;
+  margin-top: 80px;
   color: #1a1b1f;
 }
 
@@ -2921,6 +2981,12 @@ figcaption {
 
 html.w-mod-js *[data-ix="new-interaction"] {
   opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -5184,7 +5250,7 @@ html.w-mod-js *[data-ix="new-interaction"] {
     font-weight: 700;
   }
   .main_div-copy {
-    margin-top: 130px;
+    margin-top: 80px;
     margin-right: 0px;
     margin-bottom: 45px;
     padding-right: 35px;

@@ -1,3 +1,11 @@
+# 1.2.3
+
+- Minor graphic fixes
+- List's 'load more' button patched.
+- No more duplicates are allowed in our database.
+- Language selection is now a separated 'service'.
+- Removed all the unnecessary style and script from the ejs frontend.
+
 # 1.2.2
 
 - Terms of Service and Cookie Policy has been detailed.
