@@ -1,6 +1,6 @@
-# Project Q.
+# Q.
 
-Project Q. is the first Spation open source product and, most importantly, the first digital product we ever released to the public. 
+Q. is the first Spation open source product and, most importantly, the first digital product we ever released to the public. 
 
 Mainly born to give our little contribution during this though time, Q. lets you check for the estimated queue waiting time outside supermarkets in order to both save you some time and help reduce the possibility of get infected by standing inline for too long.
 
@@ -10,4 +10,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-Project Q. is [MIT licensed.](https://choosealicense.com/licenses/mit/)
+Q. is [MIT licensed.](https://choosealicense.com/licenses/mit/)
